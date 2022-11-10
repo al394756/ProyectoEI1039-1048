@@ -22,6 +22,7 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('ProyectoEI1039-1048');
   });
 
+
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();

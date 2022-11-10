@@ -35,4 +35,11 @@ describe('AppComponent', () => {
     let servicioApi = new ApiWeather();
     expect(servicioApi.exists(coordenadasPrueba)).toEqual(true);
   });
+
+  it('Como usuario quiero validar las coordenadas geográficas de una ubicación no disponible en los servicios API activos, con el fin de evaluar su utilidad', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    let coordenadasPrueba = new Coordenadas("abc","O0°22'38.6");
+    let servicioApi = new ApiWeather();
+    expect(servicioApi.exists(coordenadasPrueba)).toThrow(new Error("Coordenadas no válidas"));
+  });
 });

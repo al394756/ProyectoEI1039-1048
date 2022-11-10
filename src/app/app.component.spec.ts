@@ -36,4 +36,11 @@ describe('AppComponent', () => {
     let servicioApi = new ApiWeather();
     expect(servicioApi.exists(toponimoPrueba)).toEqual(true);
   });
+
+  it('Como usuario quiero validar el topónimo de una ubicación no existente en los servicios API activos, con el fin de evaluar su utilidad', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    let toponimoPrueba = "Balencia";
+    let servicioApi = new ApiWeather();
+    expect(servicioApi.exists(toponimoPrueba)).toThrow(new IncorrectLocationException());
+  });
 });

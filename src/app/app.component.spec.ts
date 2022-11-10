@@ -29,4 +29,11 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('.content span')?.textContent).toContain('ProyectoEI1039-1048 app is running!');
   });
+
+  it('Como usuario quiero validar el topónimo de una ubicación disponible en los servicios API activos, con el fin de evaluar su utilidad', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    let toponimoPrueba = "Valencia";
+    let servicioApi = new ApiWeather();
+    expect(servicioApi.exists(toponimoPrueba)).toEqual(true);
+  });
 });

@@ -40,6 +40,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     let coordenadasPrueba = new Coordenadas("abc","O0°22'38.6");
     let servicioApi = new ApiWeather();
-    expect(servicioApi.exists(coordenadasPrueba)).toThrow(new Error("Coordenadas no válidas"));
+    expect(servicioApi.exists(coordenadasPrueba)).toThrow(new IncorrectLocationException());
   });
 });
